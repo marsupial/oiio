@@ -426,7 +426,7 @@ OIIO_EXPORT const char* coregraphics_imageio_library_version () {
     //UtiExtensions outputExts(CGImageDestinationCopyTypeIdentifiers());
 
     declare_imageio_format("coregraphics", coregraphics_input_imageio_create,
-                           inputExts, NULL, NULL, kDepLibrary);
+                           inputExts, NULL, NULL, kDepLibrary, 65);
     return kDepLibrary;
 }
 

@@ -46,11 +46,39 @@
 OIIO_NAMESPACE_BEGIN
     using namespace pvt;
 
-typedef std::map <std::string, ImageInput::Creator> InputPluginMap;
-typedef std::map <std::string, ImageOutput::Creator> OutputPluginMap;
+namespace {
+
+enum { kDefaultPriority = 128 };
+
+template <class T>
+struct PluginData {
+    T creator;
+    unsigned char priority;
+    PluginData(T f = NULL, unsigned char p = kDefaultPriority) : creator(f), priority(p) {}
+    operator T () const { return creator; }
+};
+
+template <class T> PluginData<T>
+pluginData(T creator, unsigned char priority = kDefaultPriority) {
+    return PluginData<T>(creator, priority);
+}
+
+template <class T>
+class PluginMap : public std::map <std::string, PluginData<T> > {
+    typedef std::map <std::string, PluginData<T> > Base;
+public:
+    using Base::find;
+    bool find(const std::string &name, unsigned char priority) {
+        const typename Base::const_iterator fmt = Base::find(name);
+        return fmt == Base::end() || fmt->second.priority < priority;
+    }
+};
+
+
+typedef PluginMap<ImageInput::Creator> InputPluginMap;
+typedef PluginMap<ImageOutput::Creator> OutputPluginMap;
 typedef const char* (*PluginLibVersionFunc) ();
 
-namespace {
 
 // Map format name to ImageInput creation
 static InputPluginMap input_formats;
@@ -73,13 +101,6 @@ static std::string pattern = Strutil::format (".imageio.%s",
                                               Plugin::plugin_extension());
 
 
-inline void
-add_if_missing (std::vector<std::string> &vec, const std::string &val)
-{
-    if (std::find (vec.begin(), vec.end(), val) == vec.end())
-        vec.push_back (val);
-}
-
 } // anon namespace
 
 
@@ -92,20 +113,20 @@ declare_imageio_format (const std::string &format_name,
                         const char **input_extensions,
                         ImageOutput::Creator output_creator,
                         const char **output_extensions,
-                        const char *lib_version)
+                        const char *lib_version,
+                        unsigned char priority)
 {
     std::set<std::string> all_extensions;
     // Look for input creator and list of supported extensions
     if (input_creator) {
-        if (input_formats.find(format_name) != input_formats.end())
-            input_formats[format_name] = input_creator;
+        if (input_formats.find(format_name, priority))
+            input_formats[format_name] = pluginData(input_creator, priority);
         std::string extsym = format_name + "_input_extensions";
         for (const char **e = input_extensions; e && *e; ++e) {
             std::string ext (*e);
             Strutil::to_lower (ext);
-            if (input_formats.find(ext) == input_formats.end()) {
-                input_formats[ext] = input_creator;
-                add_if_missing (all_extensions, ext);
+            if (input_formats.find(ext, priority)) {
+                input_formats[ext] = pluginData(input_creator, priority);
                 all_extensions.insert (ext);
             }
         }
@@ -113,14 +134,13 @@ declare_imageio_format (const std::string &format_name,
 
     // Look for output creator and list of supported extensions
     if (output_creator) {
-        if (output_formats.find(format_name) != output_formats.end())
-            output_formats[format_name] = output_creator;
+        if (output_formats.find(format_name, priority))
+            output_formats[format_name] = pluginData(output_creator, priority);
         for (const char **e = output_extensions; e && *e; ++e) {
             std::string ext (*e);
             Strutil::to_lower (ext);
-            if (output_formats.find(ext) == output_formats.end()) {
-                output_formats[ext] = output_creator;
-                add_if_missing (all_extensions, ext);
+            if (output_formats.find(ext, priority)) {
+                output_formats[ext] = pluginData(output_creator, priority);
                 all_extensions.insert (ext);
             }
         }
@@ -134,7 +154,10 @@ declare_imageio_format (const std::string &format_name,
     format_list += format_name;
     if (extension_list.length())
         extension_list += std::string(";");
-    extension_list += format_name + std::string(":");
+    extension_list += format_name;
+    if (priority != kDefaultPriority)
+        extension_list += Strutil::format ("[%d]", int(priority));
+    extension_list += std::string(":");
     extension_list += Strutil::join(all_extensions, ",");
     if (lib_version) {
         format_library_versions[format_name] = lib_version;
@@ -264,13 +287,15 @@ catalog_builtin_plugins ()
 {
 #ifdef EMBED_PLUGINS
     // Use DECLAREPLUG macro to make this more compact and easy to read.
-#define DECLAREPLUG(name)                                                 \
+#define DECLAREPLUG_PRIORITY(name, priority)                              \
     declare_imageio_format (#name,                                        \
                    (ImageInput::Creator) name ## _input_imageio_create,   \
                    name ## _input_extensions,                             \
                    (ImageOutput::Creator) name ## _output_imageio_create, \
                    name ## _output_extensions,                            \
-                   name ## _imageio_library_version())
+                   name ## _imageio_library_version(), priority)
+
+#define DECLAREPLUG(name) DECLAREPLUG_PRIORITY(name, kDefaultPriority)
 
     DECLAREPLUG (bmp);
     DECLAREPLUG (cineon);
@@ -319,7 +344,8 @@ catalog_builtin_plugins ()
 #endif
     DECLAREPLUG (zfile);
 #ifdef __APPLE__
-    DECLAREPLUG (coregraphics);
+    // Set to a low priority so any dynamic formats can replace it.
+    DECLAREPLUG_PRIORITY (coregraphics, kDefaultPriority/2);
 #endif
 #endif
 }

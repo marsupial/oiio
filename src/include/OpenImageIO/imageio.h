@@ -1333,7 +1333,8 @@ OIIO_API void declare_imageio_format (const std::string &format_name,
                                       const char **input_extensions,
                                       ImageOutput::Creator output_creator,
                                       const char **output_extensions,
-                                      const char *lib_version);
+                                      const char *lib_version,
+                                      unsigned char priority = 128);
 
 
 /// Helper function: convert contiguous arbitrary data between two
