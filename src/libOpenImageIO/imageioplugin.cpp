@@ -246,7 +246,9 @@ catalog_plugin (const std::string &format_name,
     PLUGENTRY (targa);
     PLUGENTRY (webp);
     PLUGENTRY (zfile);
-
+#ifdef __APPLE__
+    PLUGENTRY (coregraphics);
+#endif
 
 #endif // defined(EMBED_PLUGINS)
 
@@ -316,6 +318,9 @@ catalog_builtin_plugins ()
     DECLAREPLUG (webp);
 #endif
     DECLAREPLUG (zfile);
+#ifdef __APPLE__
+    DECLAREPLUG (coregraphics);
+#endif
 #endif
 }
 
