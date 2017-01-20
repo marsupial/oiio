@@ -42,6 +42,17 @@
 #include "field3d_pvt.h"
 using namespace OIIO_NAMESPACE::f3dpvt;
 
+#if defined(__clang__) && (__clang_major__ * 100 + __clang_minor__) >= 308
+// explicit instantiation declarations to suppress -Wundefined-var-template
+FIELD3D_NAMESPACE_OPEN
+  extern template class FieldCache<half>;
+  extern template class FieldCache<float>;
+  extern template class FieldCache<double>;
+  extern template class FieldCache< Imath_2_2::Vec3<half> >;
+  extern template class FieldCache< Imath_2_2::Vec3<float> >;
+  extern template class FieldCache< Imath_2_2::Vec3<double> >;
+FIELD3D_NAMESPACE_HEADER_CLOSE
+#endif
 
 OIIO_PLUGIN_NAMESPACE_BEGIN
 
