@@ -31,6 +31,7 @@
 #include <cstdio>
 #include <cstdlib>
 #include <map>
+#include <set>
 #include <string>
 #include <vector>
 
@@ -93,7 +94,7 @@ declare_imageio_format (const std::string &format_name,
                         const char **output_extensions,
                         const char *lib_version)
 {
-    std::vector<std::string> all_extensions;
+    std::set<std::string> all_extensions;
     // Look for input creator and list of supported extensions
     if (input_creator) {
         if (input_formats.find(format_name) != input_formats.end())
@@ -105,6 +106,7 @@ declare_imageio_format (const std::string &format_name,
             if (input_formats.find(ext) == input_formats.end()) {
                 input_formats[ext] = input_creator;
                 add_if_missing (all_extensions, ext);
+                all_extensions.insert (ext);
             }
         }
     }
@@ -119,6 +121,7 @@ declare_imageio_format (const std::string &format_name,
             if (output_formats.find(ext) == output_formats.end()) {
                 output_formats[ext] = output_creator;
                 add_if_missing (all_extensions, ext);
+                all_extensions.insert (ext);
             }
         }
     }

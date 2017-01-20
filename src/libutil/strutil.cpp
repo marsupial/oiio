@@ -483,14 +483,36 @@ Strutil::join (const std::vector<string_view> &seq, string_view str)
 }
 
 
+namespace {
+    template <class T> static std::string
+    stljoin (const T &seq, string_view str)
+    {
+        if (seq.empty())
+            return std::string();
+
+        typename T::const_iterator it = seq.begin(), end = seq.end();
+        std::string result (*it);
+        while (++it != end) {
+            result += str;
+            result += *it;
+        }
+        return result;
+    }
+}
+
 
 std::string
 Strutil::join (const std::vector<std::string> &seq, string_view str)
 {
-    std::vector<string_view> seq_sr (seq.size());
-    for (size_t i = 0, e = seq.size(); i != e; ++i)
-        seq_sr[i] = seq[i];
-    return join (seq_sr, str);
+    return stljoin(seq, str);
+}
+
+
+
+std::string
+Strutil::join (const std::set<std::string> &seq, string_view str)
+{
+    return stljoin(seq, str);
 }
 
 

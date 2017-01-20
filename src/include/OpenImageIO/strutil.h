@@ -46,6 +46,7 @@
 #include <cstdlib>
 #include <cstdio>
 #include <vector>
+#include <set>
 #include <map>
 
 #include "export.h"
@@ -243,6 +244,8 @@ void OIIO_API split (string_view str, std::vector<std::string> &result,
 std::string OIIO_API join (const std::vector<string_view> &seq,
                            string_view sep = string_view());
 std::string OIIO_API join (const std::vector<std::string> &seq,
+                           string_view sep = string_view());
+std::string OIIO_API join (const std::set<std::string> &seq,
                            string_view sep = string_view());
 
 /// Repeat a string formed by concatenating str n times.
