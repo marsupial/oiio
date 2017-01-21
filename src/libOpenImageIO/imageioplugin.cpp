@@ -68,9 +68,12 @@ class PluginMap : public std::map <std::string, PluginData<T> > {
     typedef std::map <std::string, PluginData<T> > Base;
 public:
     using Base::find;
-    bool find(const std::string &name, unsigned char priority) {
+    bool find(const std::string &name, unsigned char priority, T* other = NULL) {
         const typename Base::const_iterator fmt = Base::find(name);
-        return fmt == Base::end() || fmt->second.priority < priority;
+        bool insert = (fmt == Base::end() || fmt->second.priority < priority);
+        if (other)
+            *other = (fmt == Base::end() ? NULL : fmt->second.creator);
+        return insert;
     }
 };
 
@@ -117,10 +120,19 @@ declare_imageio_format (const std::string &format_name,
                         unsigned char priority)
 {
     std::set<std::string> all_extensions;
+    ImageOutput::Creator otherOut = NULL;
+
     // Look for input creator and list of supported extensions
     if (input_creator) {
-        if (input_formats.find(format_name, priority))
+        // FIXME:
+        // Work around need for declare_imageio_format to be called twice for
+        // plugins that generate their format list dynamically.
+        ImageInput::Creator otherIn = NULL;
+        if (input_formats.find(format_name, priority, &otherIn))
             input_formats[format_name] = pluginData(input_creator, priority);
+        else if (input_creator == otherIn) // Recursive registration!
+            return;
+
         std::string extsym = format_name + "_input_extensions";
         for (const char **e = input_extensions; e && *e; ++e) {
             std::string ext (*e);
@@ -134,7 +146,7 @@ declare_imageio_format (const std::string &format_name,
 
     // Look for output creator and list of supported extensions
     if (output_creator) {
-        if (output_formats.find(format_name, priority))
+        if (output_formats.find(format_name, priority, &otherOut))
             output_formats[format_name] = pluginData(output_creator, priority);
         for (const char **e = output_extensions; e && *e; ++e) {
             std::string ext (*e);
