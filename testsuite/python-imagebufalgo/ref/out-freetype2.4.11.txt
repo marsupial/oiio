@@ -25,143 +25,143 @@ B hist:  (0L, 10000L, 0L, 0L)
 Done.
 Comparing "black.tif" and "ref/black.tif"
 PASS
-Comparing "filled.tif" and "{OIIO_TESTSUITE_ROOT}/oiiotool/ref/filled.tif"
+Comparing "filled.tif" and "../../../../testsuite/oiiotool/ref/filled.tif"
 PASS
 Comparing "checker.tif" and "ref/checker.tif"
 PASS
-Comparing "noise-uniform3.tif" and "{OIIO_TESTSUITE_ROOT}/oiiotool-pattern/ref/noise-uniform3.tif"
+Comparing "noise-uniform3.tif" and "../../../../testsuite/oiiotool-pattern/ref/noise-uniform3.tif"
 PASS
-Comparing "noise-gauss.tif" and "{OIIO_TESTSUITE_ROOT}/oiiotool-pattern/ref/noise-gauss.tif"
+Comparing "noise-gauss.tif" and "../../../../testsuite/oiiotool-pattern/ref/noise-gauss.tif"
 PASS
-Comparing "noise-salt.tif" and "{OIIO_TESTSUITE_ROOT}/oiiotool-pattern/ref/noise-salt.tif"
+Comparing "noise-salt.tif" and "../../../../testsuite/oiiotool-pattern/ref/noise-salt.tif"
 PASS
-Comparing "chanshuffle.tif" and "{OIIO_TESTSUITE_ROOT}/oiiotool/ref/chanshuffle.tif"
+Comparing "chanshuffle.tif" and "../../../../testsuite/oiiotool/ref/chanshuffle.tif"
 PASS
-Comparing "ch-rgba.exr" and "{OIIO_TESTSUITE_ROOT}/oiiotool/ref/ch-rgba.exr"
+Comparing "ch-rgba.exr" and "../../../../testsuite/oiiotool/ref/ch-rgba.exr"
 PASS
-Comparing "ch-z.exr" and "{OIIO_TESTSUITE_ROOT}/oiiotool/ref/ch-z.exr"
+Comparing "ch-z.exr" and "../../../../testsuite/oiiotool/ref/ch-z.exr"
 PASS
-Comparing "chappend-rgbaz.exr" and "{OIIO_TESTSUITE_ROOT}/oiiotool/ref/chappend-rgbaz.exr"
+Comparing "chappend-rgbaz.exr" and "../../../../testsuite/oiiotool/ref/chappend-rgbaz.exr"
 PASS
-Comparing "flat.exr" and "{OIIO_TESTSUITE_ROOT}/oiiotool-deep/ref/flat.exr"
+Comparing "flat.exr" and "../../../../testsuite/oiiotool-deep/ref/flat.exr"
 PASS
-Comparing "deepen.exr" and "{OIIO_TESTSUITE_ROOT}/oiiotool-deep/ref/deepen.exr"
+Comparing "deepen.exr" and "../../../../testsuite/oiiotool-deep/ref/deepen.exr"
 PASS
-Comparing "crop.tif" and "{OIIO_TESTSUITE_ROOT}/oiiotool/ref/crop.tif"
+Comparing "crop.tif" and "../../../../testsuite/oiiotool/ref/crop.tif"
 PASS
-Comparing "cut.tif" and "{OIIO_TESTSUITE_ROOT}/oiiotool/ref/cut.tif"
+Comparing "cut.tif" and "../../../../testsuite/oiiotool/ref/cut.tif"
 PASS
-Comparing "pasted.tif" and "{OIIO_TESTSUITE_ROOT}/oiiotool/ref/pasted.tif"
+Comparing "pasted.tif" and "../../../../testsuite/oiiotool/ref/pasted.tif"
 PASS
-Comparing "rotate90.tif" and "{OIIO_TESTSUITE_ROOT}/oiiotool-xform/ref/rotate90.tif"
+Comparing "rotate90.tif" and "../../../../testsuite/oiiotool-xform/ref/rotate90.tif"
 PASS
-Comparing "rotate180.tif" and "{OIIO_TESTSUITE_ROOT}/oiiotool/ref/rotate180.tif"
+Comparing "rotate180.tif" and "../../../../testsuite/oiiotool/ref/rotate180.tif"
 PASS
-Comparing "rotate270.tif" and "{OIIO_TESTSUITE_ROOT}/oiiotool-xform/ref/rotate270.tif"
+Comparing "rotate270.tif" and "../../../../testsuite/oiiotool-xform/ref/rotate270.tif"
 PASS
-Comparing "rotated.tif" and "{OIIO_TESTSUITE_ROOT}/oiiotool-xform/ref/rotated.tif"
+Comparing "rotated.tif" and "../../../../testsuite/oiiotool-xform/ref/rotated.tif"
 PASS
-Comparing "rotated-offcenter.tif" and "{OIIO_TESTSUITE_ROOT}/oiiotool-xform/ref/rotated-offcenter.tif"
+Comparing "rotated-offcenter.tif" and "../../../../testsuite/oiiotool-xform/ref/rotated-offcenter.tif"
 PASS
-Comparing "warped.tif" and "{OIIO_TESTSUITE_ROOT}/oiiotool-xform/ref/warped.tif"
+Comparing "warped.tif" and "../../../../testsuite/oiiotool-xform/ref/warped.tif"
 PASS
-Comparing "flip.tif" and "{OIIO_TESTSUITE_ROOT}/oiiotool-xform/ref/flip.tif"
+Comparing "flip.tif" and "../../../../testsuite/oiiotool-xform/ref/flip.tif"
 PASS
-Comparing "flop.tif" and "{OIIO_TESTSUITE_ROOT}/oiiotool-xform/ref/flop.tif"
+Comparing "flop.tif" and "../../../../testsuite/oiiotool-xform/ref/flop.tif"
 PASS
-Comparing "reorient1.tif" and "{OIIO_TESTSUITE_ROOT}/oiiotool-xform/ref/reorient1.tif"
+Comparing "reorient1.tif" and "../../../../testsuite/oiiotool-xform/ref/reorient1.tif"
 PASS
-Comparing "transpose.tif" and "{OIIO_TESTSUITE_ROOT}/oiiotool-xform/ref/transpose.tif"
+Comparing "transpose.tif" and "../../../../testsuite/oiiotool-xform/ref/transpose.tif"
 PASS
-Comparing "cshift.tif" and "{OIIO_TESTSUITE_ROOT}/oiiotool-xform/ref/cshift.tif"
+Comparing "cshift.tif" and "../../../../testsuite/oiiotool-xform/ref/cshift.tif"
 PASS
-Comparing "cadd1.exr" and "{OIIO_TESTSUITE_ROOT}/oiiotool/ref/cadd1.exr"
+Comparing "cadd1.exr" and "../../../../testsuite/oiiotool/ref/cadd1.exr"
 PASS
-Comparing "cadd2.exr" and "{OIIO_TESTSUITE_ROOT}/oiiotool/ref/cadd2.exr"
+Comparing "cadd2.exr" and "../../../../testsuite/oiiotool/ref/cadd2.exr"
 PASS
-Comparing "add.exr" and "{OIIO_TESTSUITE_ROOT}/oiiotool/ref/add.exr"
+Comparing "add.exr" and "../../../../testsuite/oiiotool/ref/add.exr"
 PASS
-Comparing "sub.exr" and "{OIIO_TESTSUITE_ROOT}/oiiotool/ref/sub.exr"
+Comparing "sub.exr" and "../../../../testsuite/oiiotool/ref/sub.exr"
 PASS
-Comparing "abs.exr" and "{OIIO_TESTSUITE_ROOT}/oiiotool/ref/abs.exr"
+Comparing "abs.exr" and "../../../../testsuite/oiiotool/ref/abs.exr"
 PASS
-Comparing "absdiff.exr" and "{OIIO_TESTSUITE_ROOT}/oiiotool/ref/absdiff.exr"
+Comparing "absdiff.exr" and "../../../../testsuite/oiiotool/ref/absdiff.exr"
 PASS
-Comparing "mul.exr" and "{OIIO_TESTSUITE_ROOT}/oiiotool/ref/mul.exr"
+Comparing "mul.exr" and "../../../../testsuite/oiiotool/ref/mul.exr"
 PASS
-Comparing "cmul1.exr" and "{OIIO_TESTSUITE_ROOT}/oiiotool/ref/cmul1.exr"
+Comparing "cmul1.exr" and "../../../../testsuite/oiiotool/ref/cmul1.exr"
 PASS
-Comparing "cmul2.exr" and "{OIIO_TESTSUITE_ROOT}/oiiotool/ref/cmul2.exr"
+Comparing "cmul2.exr" and "../../../../testsuite/oiiotool/ref/cmul2.exr"
 PASS
-Comparing "mad.exr" and "{OIIO_TESTSUITE_ROOT}/oiiotool/ref/mad.exr"
+Comparing "mad.exr" and "../../../../testsuite/oiiotool/ref/mad.exr"
 PASS
 Comparing "mad2.exr" and "ref/mad2.exr"
 PASS
 Comparing "mad3.exr" and "ref/mad3.exr"
 PASS
-Comparing "cpow1.exr" and "{OIIO_TESTSUITE_ROOT}/oiiotool/ref/cpow1.exr"
+Comparing "cpow1.exr" and "../../../../testsuite/oiiotool/ref/cpow1.exr"
 PASS
-Comparing "cpow2.exr" and "{OIIO_TESTSUITE_ROOT}/oiiotool/ref/cpow2.exr"
+Comparing "cpow2.exr" and "../../../../testsuite/oiiotool/ref/cpow2.exr"
 PASS
-Comparing "div.exr" and "{OIIO_TESTSUITE_ROOT}/oiiotool/ref/div.exr"
+Comparing "div.exr" and "../../../../testsuite/oiiotool/ref/div.exr"
 PASS
-Comparing "divc1.exr" and "{OIIO_TESTSUITE_ROOT}/oiiotool/ref/divc1.exr"
+Comparing "divc1.exr" and "../../../../testsuite/oiiotool/ref/divc1.exr"
 PASS
-Comparing "divc2.exr" and "{OIIO_TESTSUITE_ROOT}/oiiotool/ref/divc2.exr"
+Comparing "divc2.exr" and "../../../../testsuite/oiiotool/ref/divc2.exr"
 PASS
-Comparing "invert.tif" and "{OIIO_TESTSUITE_ROOT}/oiiotool/ref/invert.tif"
+Comparing "invert.tif" and "../../../../testsuite/oiiotool/ref/invert.tif"
 PASS
-Comparing "chsum.tif" and "{OIIO_TESTSUITE_ROOT}/oiiotool/ref/chsum.tif"
+Comparing "chsum.tif" and "../../../../testsuite/oiiotool/ref/chsum.tif"
 PASS
-Comparing "colormap-inferno.tif" and "{OIIO_TESTSUITE_ROOT}/oiiotool-color/ref/colormap-inferno.tif"
+Comparing "colormap-inferno.tif" and "../../../../testsuite/oiiotool-color/ref/colormap-inferno.tif"
 PASS
-Comparing "colormap-custom.tif" and "{OIIO_TESTSUITE_ROOT}/oiiotool-color/ref/colormap-custom.tif"
+Comparing "colormap-custom.tif" and "../../../../testsuite/oiiotool-color/ref/colormap-custom.tif"
 PASS
-Comparing "grid-clamped.tif" and "{OIIO_TESTSUITE_ROOT}/oiiotool/ref/grid-clamped.tif"
+Comparing "grid-clamped.tif" and "../../../../testsuite/oiiotool/ref/grid-clamped.tif"
 PASS
-Comparing "rangecompress.tif" and "{OIIO_TESTSUITE_ROOT}/oiiotool/ref/rangecompress.tif"
+Comparing "rangecompress.tif" and "../../../../testsuite/oiiotool/ref/rangecompress.tif"
 PASS
-Comparing "rangeexpand.tif" and "{OIIO_TESTSUITE_ROOT}/oiiotool/ref/rangeexpand.tif"
+Comparing "rangeexpand.tif" and "../../../../testsuite/oiiotool/ref/rangeexpand.tif"
 PASS
-Comparing "resize.tif" and "{OIIO_TESTSUITE_ROOT}/oiiotool-xform/ref/resize.tif"
+Comparing "resize.tif" and "../../../../testsuite/oiiotool-xform/ref/resize.tif"
 PASS
-Comparing "resample.tif" and "{OIIO_TESTSUITE_ROOT}/oiiotool-xform/ref/resample.tif"
+Comparing "resample.tif" and "../../../../testsuite/oiiotool-xform/ref/resample.tif"
 PASS
-Comparing "fit.tif" and "{OIIO_TESTSUITE_ROOT}/oiiotool-xform/ref/fit.tif"
+Comparing "fit.tif" and "../../../../testsuite/oiiotool-xform/ref/fit.tif"
 PASS
-Comparing "bsplinekernel.exr" and "{OIIO_TESTSUITE_ROOT}/oiiotool/ref/bsplinekernel.exr"
+Comparing "bsplinekernel.exr" and "../../../../testsuite/oiiotool/ref/bsplinekernel.exr"
 PASS
-Comparing "bspline-blur.tif" and "{OIIO_TESTSUITE_ROOT}/oiiotool/ref/bspline-blur.tif"
+Comparing "bspline-blur.tif" and "../../../../testsuite/oiiotool/ref/bspline-blur.tif"
 PASS
-Comparing "tahoe-median.tif" and "{OIIO_TESTSUITE_ROOT}/oiiotool/ref/tahoe-median.tif"
+Comparing "tahoe-median.tif" and "../../../../testsuite/oiiotool/ref/tahoe-median.tif"
 PASS
-Comparing "dilate.tif" and "{OIIO_TESTSUITE_ROOT}/oiiotool/ref/dilate.tif"
+Comparing "dilate.tif" and "../../../../testsuite/oiiotool/ref/dilate.tif"
 PASS
-Comparing "erode.tif" and "{OIIO_TESTSUITE_ROOT}/oiiotool/ref/erode.tif"
+Comparing "erode.tif" and "../../../../testsuite/oiiotool/ref/erode.tif"
 PASS
-Comparing "unsharp.tif" and "{OIIO_TESTSUITE_ROOT}/oiiotool/ref/unsharp.tif"
+Comparing "unsharp.tif" and "../../../../testsuite/oiiotool/ref/unsharp.tif"
 PASS
-Comparing "unsharp-median.tif" and "{OIIO_TESTSUITE_ROOT}/oiiotool/ref/unsharp-median.tif"
+Comparing "unsharp-median.tif" and "../../../../testsuite/oiiotool/ref/unsharp-median.tif"
 PASS
-Comparing "tahoe-laplacian.tif" and "{OIIO_TESTSUITE_ROOT}/oiiotool/ref/tahoe-laplacian.tif"
+Comparing "tahoe-laplacian.tif" and "../../../../testsuite/oiiotool/ref/tahoe-laplacian.tif"
 PASS
-Comparing "fft.exr" and "{OIIO_TESTSUITE_ROOT}/oiiotool/ref/fft.exr"
+Comparing "fft.exr" and "../../../../testsuite/oiiotool/ref/fft.exr"
 PASS
-Comparing "ifft.exr" and "{OIIO_TESTSUITE_ROOT}/oiiotool/ref/ifft.exr"
+Comparing "ifft.exr" and "../../../../testsuite/oiiotool/ref/ifft.exr"
 PASS
-Comparing "polar.exr" and "{OIIO_TESTSUITE_ROOT}/oiiotool/ref/polar.exr"
+Comparing "polar.exr" and "../../../../testsuite/oiiotool/ref/polar.exr"
 PASS
-Comparing "unpolar.exr" and "{OIIO_TESTSUITE_ROOT}/oiiotool/ref/unpolar.exr"
+Comparing "unpolar.exr" and "../../../../testsuite/oiiotool/ref/unpolar.exr"
 PASS
-Comparing "tahoe-filled.tif" and "{OIIO_TESTSUITE_ROOT}/oiiotool/ref/tahoe-filled.tif"
+Comparing "tahoe-filled.tif" and "../../../../testsuite/oiiotool/ref/tahoe-filled.tif"
 PASS
-Comparing "box3.exr" and "{OIIO_TESTSUITE_ROOT}/oiiotool-fixnan/ref/box3.exr"
+Comparing "box3.exr" and "../../../../testsuite/oiiotool-fixnan/ref/box3.exr"
 PASS
-Comparing "a_over_b.exr" and "{OIIO_TESTSUITE_ROOT}/oiiotool-composite/ref/a_over_b.exr"
+Comparing "a_over_b.exr" and "../../../../testsuite/oiiotool-composite/ref/a_over_b.exr"
 PASS
 Comparing "tahoe-small.tx" and "ref/tahoe-small.tx"
 PASS
-Comparing "text.tif" and "{OIIO_TESTSUITE_ROOT}/oiiotool-text/ref/text.tif"
+Comparing "text.tif" and "../../../../testsuite/oiiotool-text/ref/text.tif"
 PASS
 Comparing "textcentered.tif" and "ref/textcentered-freetype2.4.11.tif"
 PASS

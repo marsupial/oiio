@@ -1,8 +1,8 @@
-Comparing "{OIIO_TESTSUITE_IMAGEDIR}/ScanLines/Blobbies.exr" and "blob1.exr"
+Comparing "../../../../../openexr-images/ScanLines/Blobbies.exr" and "blob1.exr"
 PASS
-Comparing "{OIIO_TESTSUITE_IMAGEDIR}/ScanLines/Blobbies.exr" and "blob2.exr"
+Comparing "../../../../../openexr-images/ScanLines/Blobbies.exr" and "blob2.exr"
 PASS
-Comparing "{OIIO_TESTSUITE_IMAGEDIR}/Tiles/Spirals.exr" and "spiral1.exr"
+Comparing "../../../../../openexr-images/Tiles/Spirals.exr" and "spiral1.exr"
 PASS
-Comparing "{OIIO_TESTSUITE_IMAGEDIR}/Tiles/Spirals.exr" and "spiral2.exr"
+Comparing "../../../../../openexr-images/Tiles/Spirals.exr" and "spiral2.exr"
 PASS
