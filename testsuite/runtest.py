@@ -51,17 +51,35 @@ OIIO_TESTSUITE_ROOT = oiio_relpath(os.environ['OIIO_TESTSUITE_ROOT'])
 OIIO_TESTSUITE_IMAGEDIR = os.environ.get('OIIO_TESTSUITE_IMAGEDIR', None)
 if OIIO_TESTSUITE_IMAGEDIR:
     OIIO_TESTSUITE_IMAGEDIR = oiio_relpath(OIIO_TESTSUITE_IMAGEDIR)
+    # Set it back so test's can use it (python-imagebufalgo)
     os.environ['OIIO_TESTSUITE_IMAGEDIR'] = OIIO_TESTSUITE_IMAGEDIR
 
 refdir = "ref/"
 refdirlist = [ refdir ]
-parent = os.path.dirname(os.path.dirname(OIIO_TESTSUITE_ROOT))
 test_source_dir = os.environ['OIIO_TESTSUITE_SRC']
 colorconfig_file = os.path.join(OIIO_TESTSUITE_ROOT,
                                 "common", "OpenColorIO", "nuke-default", "config.ocio")
 
-print('OIIO_TESTSUITE_ROOT', OIIO_TESTSUITE_ROOT)
-print('OIIO_TESTSUITE_IMAGEDIR', OIIO_TESTSUITE_IMAGEDIR)
+
+# Swap the relative diff lines if the test suite is not being run via Makefile
+if OIIO_TESTSUITE_ROOT != "../../../../testsuite":
+    def replace_relative(line):
+        line = line.replace("../../../../testsuite", OIIO_TESTSUITE_ROOT)
+        if not OIIO_TESTSUITE_IMAGEDIR:
+            return line
+
+        imgdir = os.path.basename(OIIO_TESTSUITE_IMAGEDIR)
+        if imgdir != "oiio-images":
+            oiioimgs = os.path.basename(os.path.dirname(OIIO_TESTSUITE_IMAGEDIR))
+            if oiioimgs == "oiio-images":
+                return line.replace("../../../../../oiio-images/" + imgdir,
+                                    OIIO_TESTSUITE_IMAGEDIR)
+
+        return line.replace("../../../../../" + imgdir, OIIO_TESTSUITE_IMAGEDIR)
+else:
+    def replace_relative(line):
+        return line
+
 
 command = ""
 outputs = [ "out.txt" ]    # default
@@ -134,8 +152,7 @@ def text_diff (fromfile, tofile, diff_file=None):
         fromdate = time.ctime (os.stat (fromfile).st_mtime)
         todate = time.ctime (os.stat (tofile).st_mtime)
         fromlines = open (fromfile, 'r').readlines()
-        tolines   = [ l.format(OIIO_TESTSUITE_IMAGEDIR=OIIO_TESTSUITE_IMAGEDIR,
-                               OIIO_TESTSUITE_ROOT=OIIO_TESTSUITE_ROOT)
+        tolines   = [ replace_relative(l)
                       for l in open (tofile, 'r').readlines() ]
     except:
         print ("Unexpected error:", sys.exc_info()[0])
