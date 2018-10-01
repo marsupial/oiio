@@ -6,15 +6,15 @@ Copied tiled.tif to grid-tile.tif as tile
 Copied tiled.tif to grid-tiles.tif as tiles
 Copied scanline.tif to grid-image.tif as image
 Done.
-Comparing "grid-image.tif" and "../../../../../oiio-images/grid.tif"
+Comparing "grid-image.tif" and "{OIIO_TESTSUITE_IMAGEDIR}/grid.tif"
 PASS
-Comparing "grid-scanline.tif" and "../../../../../oiio-images/grid.tif"
+Comparing "grid-scanline.tif" and "{OIIO_TESTSUITE_IMAGEDIR}/grid.tif"
 PASS
-Comparing "grid-scanlines.tif" and "../../../../../oiio-images/grid.tif"
+Comparing "grid-scanlines.tif" and "{OIIO_TESTSUITE_IMAGEDIR}/grid.tif"
 PASS
-Comparing "grid-timage.tif" and "../../../../../oiio-images/grid.tif"
+Comparing "grid-timage.tif" and "{OIIO_TESTSUITE_IMAGEDIR}/grid.tif"
 PASS
-Comparing "grid-tile.tif" and "../../../../../oiio-images/grid.tif"
+Comparing "grid-tile.tif" and "{OIIO_TESTSUITE_IMAGEDIR}/grid.tif"
 PASS
-Comparing "grid-tiles.tif" and "../../../../../oiio-images/grid.tif"
+Comparing "grid-tiles.tif" and "{OIIO_TESTSUITE_IMAGEDIR}/grid.tif"
 PASS

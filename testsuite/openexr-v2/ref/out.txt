@@ -1,5 +1,5 @@
-Reading ../../../../../openexr-images/v2/Stereo/composited.exr
-../../../../../openexr-images/v2/Stereo/composited.exr : 1918 x 1078, 4 channel, half openexr
+Reading {OIIO_TESTSUITE_IMAGEDIR}/v2/Stereo/composited.exr
+{OIIO_TESTSUITE_IMAGEDIR}/v2/Stereo/composited.exr : 1918 x 1078, 4 channel, half openexr
     4 subimages: 1918x1078 [h,h,h,h], 1918x1078 [h], 1918x1078 [h,h,h,h], 1918x1078 [h]
  subimage  0: 1918 x 1078, 4 channel, half openexr
     SHA-1: 95EDAC421BCDE17EFB4DA1078E13DCC322D56608
@@ -66,7 +66,7 @@ Reading ../../../../../openexr-images/v2/Stereo/composited.exr
     oiio:ColorSpace: "Linear"
     oiio:subimagename: "depth.right"
     openexr:chunkCount: 1078
-../../../../../openexr-images/v2/Stereo/composited.exr : 1918 x 1078, 4 channel, half openexr (4 subimages)
+{OIIO_TESTSUITE_IMAGEDIR}/v2/Stereo/composited.exr : 1918 x 1078, 4 channel, half openexr (4 subimages)
     Stats Min: 0.000000 0.000000 0.000000 0.000000 (float)
     Stats Max: 0.600586 0.593262 0.344971 1.000000 (float)
     Stats Avg: 0.078215 0.093938 0.031610 0.769054 (float)
@@ -76,10 +76,10 @@ Reading ../../../../../openexr-images/v2/Stereo/composited.exr
     Stats FiniteCount: 2067604 2067604 2067604 2067604 
     Constant: No
     Monochrome: No
-Comparing "../../../../../openexr-images/v2/Stereo/composited.exr" and "composited.exr"
+Comparing "{OIIO_TESTSUITE_IMAGEDIR}/v2/Stereo/composited.exr" and "composited.exr"
 PASS
-Reading ../../../../../openexr-images/v2/Stereo/Balls.exr
-../../../../../openexr-images/v2/Stereo/Balls.exr : 1431 x  761, 5 channel, deep half/half/half/half/float openexr
+Reading {OIIO_TESTSUITE_IMAGEDIR}/v2/Stereo/Balls.exr
+{OIIO_TESTSUITE_IMAGEDIR}/v2/Stereo/Balls.exr : 1431 x  761, 5 channel, deep half/half/half/half/float openexr
     2 subimages: 1431x761 [h,h,h,h,f], 1452x761 [h,h,h,h,f]
  subimage  0: 1431 x  761, 5 channel, deep half/half/half/half/float openexr
     SHA-1: C68EB6A304F07B78F480E6FCDBA07BF9028E3305
@@ -115,7 +115,7 @@ Reading ../../../../../openexr-images/v2/Stereo/Balls.exr
     oiio:subimagename: "rgba.right"
     openexr:chunkCount: 761
     openexr:version: 1
-../../../../../openexr-images/v2/Stereo/Balls.exr : 1431 x  761, 5 channel, deep half/half/half/half/float openexr (2 subimages)
+{OIIO_TESTSUITE_IMAGEDIR}/v2/Stereo/Balls.exr : 1431 x  761, 5 channel, deep half/half/half/half/float openexr (2 subimages)
     Stats Min: 0.000169 0.000083 0.000092 0.015625 127.872681 (float)
     Stats Max: 0.622070 0.265625 0.267822 1.000000 738.560669 (float)
     Stats Avg: 0.106414 0.010251 0.011385 0.896199 242.031235 (float)
@@ -136,10 +136,10 @@ Reading ../../../../../openexr-images/v2/Stereo/Balls.exr
         2     :   159966 (14.7%)
     Minimum depth was 127.873 at (999, 1030)
     Maximum depth was 738.561 at (930, 413)
-Comparing "../../../../../openexr-images/v2/Stereo/Balls.exr" and "Balls.exr"
+Comparing "{OIIO_TESTSUITE_IMAGEDIR}/v2/Stereo/Balls.exr" and "Balls.exr"
 PASS
-Reading ../../../../../openexr-images/v2/Stereo/Leaves.exr
-../../../../../openexr-images/v2/Stereo/Leaves.exr : 1920 x 1080, 5 channel, deep half/half/half/half/float openexr
+Reading {OIIO_TESTSUITE_IMAGEDIR}/v2/Stereo/Leaves.exr
+{OIIO_TESTSUITE_IMAGEDIR}/v2/Stereo/Leaves.exr : 1920 x 1080, 5 channel, deep half/half/half/half/float openexr
     2 subimages: 1920x1080 [h,h,h,h,f], 1920x1080 [h,h,h,h,f]
  subimage  0: 1920 x 1080, 5 channel, deep half/half/half/half/float openexr
     SHA-1: 63932A1F4D607129054D80A4361176BA54955E90
@@ -169,7 +169,7 @@ Reading ../../../../../openexr-images/v2/Stereo/Leaves.exr
     oiio:subimagename: "rgba.right"
     openexr:chunkCount: 1080
     openexr:version: 1
-../../../../../openexr-images/v2/Stereo/Leaves.exr : 1920 x 1080, 5 channel, deep half/half/half/half/float openexr (2 subimages)
+{OIIO_TESTSUITE_IMAGEDIR}/v2/Stereo/Leaves.exr : 1920 x 1080, 5 channel, deep half/half/half/half/float openexr (2 subimages)
     Stats Min: 0.000099 0.000341 0.000152 0.015625 72.493698 (float)
     Stats Max: 0.403564 0.593262 0.345215 1.000000 954.392700 (float)
     Stats Avg: 0.071147 0.155779 0.047921 0.949514 208.998001 (float)
@@ -190,5 +190,5 @@ Reading ../../../../../openexr-images/v2/Stereo/Leaves.exr
         2     :   125696 ( 6.1%)
     Minimum depth was 72.4937 at (0, 1079)
     Maximum depth was 954.393 at (716, 324)
-Comparing "../../../../../openexr-images/v2/Stereo/Leaves.exr" and "Leaves.exr"
+Comparing "{OIIO_TESTSUITE_IMAGEDIR}/v2/Stereo/Leaves.exr" and "Leaves.exr"
 PASS
