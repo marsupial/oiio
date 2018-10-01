@@ -53,7 +53,7 @@ endif ()
 
 include (GNUInstallDirs)
 
-set (CMAKE_MODULE_PATH
+list(APPEND CMAKE_MODULE_PATH
      "${PROJECT_SOURCE_DIR}/src/cmake/modules"
      "${PROJECT_SOURCE_DIR}/src/cmake")
 
@@ -107,6 +107,8 @@ option (BUILD_OIIOUTIL_ONLY "If ON, will build *only* libOpenImageIO_Util" OFF)
 option (BUILD_DOCS "If ON, build documentation and man pages." ON)
 option (INSTALL_DOCS "If ON, install documentation and man pages." ON)
 
+set(OIIO_TESTSUITE_IMAGEDIR "${PROJECT_SOURCE_DIR}/.." CACHE STRING
+    "Location of oiio-images, openexr-images, libtiffpic, etc.." )
 
 if (NOT OIIO_THREAD_ALLOW_DCLP)
     add_definitions ("-DOIIO_THREAD_ALLOW_DCLP=0")
@@ -261,6 +263,7 @@ oiio_add_tests (
                 texture-width0blur
                 texture-fat texture-skinny texture-wrapfill
                 texture-missing texture-res texture-udim texture-udim2
+                IMAGEDIR oiio-images
               )
 
 # Add tests that require the Python bindings if we built the Python
@@ -277,6 +280,7 @@ if (USE_PYTHON AND NOT BUILD_OIIOUTIL_ONLY)
                 python-typedesc python-imagespec python-roi python-deep
                 python-imageinput python-imageoutput
                 python-imagebuf python-imagebufalgo
+                IMAGEDIR oiio-images
             )
     endif ()
 endif ()
