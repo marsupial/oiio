@@ -63,22 +63,23 @@ colorconfig_file = os.path.join(OIIO_TESTSUITE_ROOT,
 
 # Swap the relative diff lines if the test suite is not being run via Makefile
 if OIIO_TESTSUITE_ROOT != "../../../../testsuite":
-    def replace_relative(line):
-        line = line.replace("../../../../testsuite", OIIO_TESTSUITE_ROOT)
-        if not OIIO_TESTSUITE_IMAGEDIR:
-            return line
+    def replace_relative(lines):
+        imgdir = None
+        if OIIO_TESTSUITE_IMAGEDIR:
+            imgdir = os.path.basename(OIIO_TESTSUITE_IMAGEDIR)
+            if imgdir != "oiio-images":
+                oiioimgs = os.path.basename(os.path.dirname(OIIO_TESTSUITE_IMAGEDIR))
+                if oiioimgs == "oiio-images":
+                    imgdir = "oiio-images/" + imgdir
+                imgdir = "../../../../../" + imgdir
 
-        imgdir = os.path.basename(OIIO_TESTSUITE_IMAGEDIR)
-        if imgdir != "oiio-images":
-            oiioimgs = os.path.basename(os.path.dirname(OIIO_TESTSUITE_IMAGEDIR))
-            if oiioimgs == "oiio-images":
-                return line.replace("../../../../../oiio-images/" + imgdir,
-                                    OIIO_TESTSUITE_IMAGEDIR)
-
-        return line.replace("../../../../../" + imgdir, OIIO_TESTSUITE_IMAGEDIR)
+        for i in xrange(len(lines)):
+            lines[i] = lines[i].replace("../../../../testsuite", OIIO_TESTSUITE_ROOT)
+            if imgdir:
+                lines[i] = lines[i].replace(imgdir, OIIO_TESTSUITE_IMAGEDIR)
+        return lines
 else:
-    def replace_relative(line):
-        return line
+    replace_relative = None
 
 
 command = ""
@@ -152,8 +153,9 @@ def text_diff (fromfile, tofile, diff_file=None):
         fromdate = time.ctime (os.stat (fromfile).st_mtime)
         todate = time.ctime (os.stat (tofile).st_mtime)
         fromlines = open (fromfile, 'r').readlines()
-        tolines   = [ replace_relative(l)
-                      for l in open (tofile, 'r').readlines() ]
+        tolines   = open (tofile, 'r').readlines()
+        if replace_relative:
+            tolines = replace_relative(tolines)
     except:
         print ("Unexpected error:", sys.exc_info()[0])
         return -1
